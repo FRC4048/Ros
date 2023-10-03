@@ -1,0 +1,27 @@
+// start ros
+roscore
+
+// start ROS Transformation tree
+~/startScripts/startTf.sh
+
+// start lidar
+~/startScripts/startLidar.sh
+
+// start Nt2Ros translator
+ssh pi@[ip_of_pi]
+[password = raspberry]
+cd amcl
+. ./setEnv.sh
+. ./startProxy
+
+// start amcl (localization algorithem)
+~/startScripts/startAmcl.sh
+
+// load map (needed for amcl)
+~/startScripts/loadMap.sh
+
+//start RosBag (record topics so the can be played back later)
+~/startScripts/startRosBag.sh
+
+//to view results
+rosrun rviz rviz

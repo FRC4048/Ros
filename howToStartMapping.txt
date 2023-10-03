@@ -1,0 +1,19 @@
+// start Ros
+roscore
+
+//start Ros Transformation tree
+~/startScripts/startTf.sh
+
+//start Lidar
+~/startScripts/startLidar.sh
+
+//start HectorMapping
+~/startScripts/startMapping.sh
+*Drive robot around to gather data
+
+// save map
+~/startScripts/saveMap.sh
+
+
+// map can be now loaded into ros by calling...
+~/startScripts/loadMap.sh
