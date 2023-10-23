@@ -4,6 +4,7 @@
 
 FROM ros:melodic-ros-core
 RUN apt update && apt install -y build-essential
+RUN apt update && apt install -y ros-melodic-tf
 # setup ros packages
 #------------------------
 # Change the default shell to Bash
@@ -14,7 +15,11 @@ RUN source /opt/ros/melodic/setup.bash \
     && cd /catkin_ws/src \
     && catkin_init_workspace
 #------------------------
-
+# matlab    
+COPY amcl-matlab /catkin_ws/
+RUN source /opt/ros/melodic/setup.bash \
+    && cd /catkin_ws/ \
+    && catkin_make
 #setup rp lidar
 #------------------------
 RUN source /opt/ros/melodic/setup.bash \

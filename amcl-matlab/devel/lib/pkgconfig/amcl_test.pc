@@ -1,0 +1,8 @@
+prefix=C:/MatlabProjects/amcl-matlab/devel
+
+Name: amcl_test
+Description: Description of amcl_test
+Version: 1.0.0
+Cflags: -IC:/MatlabProjects/amcl-matlab/src/amcl_test/include
+Libs: -L${prefix}/lib 
+Requires: geometry_msgs nav_msgs roscpp sensor_msgs std_msgs tf2_ros
