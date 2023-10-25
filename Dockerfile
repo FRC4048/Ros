@@ -28,7 +28,6 @@ COPY ./rplidar_ros /catkin_ws/src/rplidar_ros
 RUN source /opt/ros/melodic/setup.bash \
     && cd /catkin_ws/ \
     && catkin_make
-RUN echo "source /catkin_ws/devel/setup.bash" >> ~/.bashrc
 #------------------------
 
 # setup for tf tree
@@ -43,6 +42,10 @@ RUN source /opt/ros/melodic/setup.bash \
 # gmapping
 SHELL ["/bin/sh", "-c"]
 RUN apt update && apt install -y ros-melodic-hector-slam
+RUN echo "source /catkin_ws/devel/setup.bash" >> ~/.bashrc
+# CHANGE ROS ENTRYPOINT TO SOURCE DEVL (IMPORTANT)
+RUN sed --in-place --expression \
+      '$isource "/catkin_ws/devel/setup.bash"' \
+      /ros_entrypoint.sh
 WORKDIR ros_scripts
 COPY *.sh .
-
