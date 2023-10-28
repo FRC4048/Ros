@@ -1,2 +1,2 @@
 #!/bin/bash
-roslaunch hector_slam_launch tutorial.launch
+roslaunch hector_slam_launch tutorial.launch --wait

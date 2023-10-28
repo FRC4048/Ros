@@ -1,2 +1,2 @@
 #!/bin/bash
-rosrun map_server map_server map.yaml
+rosrun map_server map_server map.yaml --wait  
