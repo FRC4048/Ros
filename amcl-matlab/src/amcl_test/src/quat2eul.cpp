@@ -10,23 +10,25 @@
 
 // Include files
 #include "quat2eul.h"
-#include "amcl_test_rtwutil.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
+#include "rt_defines.h"
 #include <cmath>
 #include <cstring>
 
 // Function Declarations
-static void binary_expand_op(double in1[3],
-                             const coder::array<signed char, 2U> &in2,
-                             const coder::array<double, 1U> &in3,
-                             const coder::array<double, 1U> &in4);
+static void binary_expand_op_4(double in1[3],
+                               const coder::array<signed char, 2U> &in2,
+                               const coder::array<double, 1U> &in3,
+                               const coder::array<double, 1U> &in4);
+
+static double rt_atan2d_snf(double u0, double u1);
 
 // Function Definitions
-static void binary_expand_op(double in1[3],
-                             const coder::array<signed char, 2U> &in2,
-                             const coder::array<double, 1U> &in3,
-                             const coder::array<double, 1U> &in4)
+static void binary_expand_op_4(double in1[3],
+                               const coder::array<signed char, 2U> &in2,
+                               const coder::array<double, 1U> &in3,
+                               const coder::array<double, 1U> &in4)
 {
   int loop_ub;
   int stride_0_0;
@@ -37,6 +39,39 @@ static void binary_expand_op(double in1[3],
   for (int i{0}; i < loop_ub; i++) {
     in1[in2[i]] = -in3[i * stride_0_0] * 2.0 * in4[i * stride_1_0];
   }
+}
+
+static double rt_atan2d_snf(double u0, double u1)
+{
+  double y;
+  if (std::isnan(u0) || std::isnan(u1)) {
+    y = rtNaN;
+  } else if (std::isinf(u0) && std::isinf(u1)) {
+    int i;
+    int i1;
+    if (u0 > 0.0) {
+      i = 1;
+    } else {
+      i = -1;
+    }
+    if (u1 > 0.0) {
+      i1 = 1;
+    } else {
+      i1 = -1;
+    }
+    y = std::atan2(static_cast<double>(i), static_cast<double>(i1));
+  } else if (u1 == 0.0) {
+    if (u0 > 0.0) {
+      y = RT_PI / 2.0;
+    } else if (u0 < 0.0) {
+      y = -(RT_PI / 2.0);
+    } else {
+      y = 0.0;
+    }
+  } else {
+    y = std::atan2(u0, u1);
+  }
+  return y;
 }
 
 namespace coder {
@@ -122,7 +157,7 @@ void quat2eul(double q[4], double eul[3])
       eul[0] = -x[0] * 2.0 * r[0];
     }
   } else {
-    binary_expand_op(eul, r1, x, r);
+    binary_expand_op_4(eul, r1, x, r);
   }
   trueCount = 0;
   if (b) {

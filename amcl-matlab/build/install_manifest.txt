@@ -1,0 +1,11 @@
+C:/MatlabProjects/amcl-matlab/install/_setup_util.py
+C:/MatlabProjects/amcl-matlab/install/_setup_util.exe
+C:/MatlabProjects/amcl-matlab/install/env.bat
+C:/MatlabProjects/amcl-matlab/install/setup.bat
+C:/MatlabProjects/amcl-matlab/install/local_setup.bat
+C:/MatlabProjects/amcl-matlab/install/.rosinstall
+C:/MatlabProjects/amcl-matlab/install/lib/pkgconfig/amcl_test.pc
+C:/MatlabProjects/amcl-matlab/install/share/amcl_test/cmake/amcl_testConfig.cmake
+C:/MatlabProjects/amcl-matlab/install/share/amcl_test/cmake/amcl_testConfig-version.cmake
+C:/MatlabProjects/amcl-matlab/install/share/amcl_test/package.xml
+C:/MatlabProjects/amcl-matlab/install/lib/amcl_test/amcl_test.exe

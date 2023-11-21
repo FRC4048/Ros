@@ -45,13 +45,13 @@ struct cell_wrap_1 {
 namespace coder {
 class monteCarloLocalization {
 public:
-  monteCarloLocalization *init();
   void set_SensorModel(
       likelihoodFieldSensorModel &sm,
       matlabshared::autonomous::internal::CircularBuffer &iobj_0,
       matlabshared::autonomous::internal::CircularBufferIndex &iobj_1,
       matlabshared::autonomous::internal::SharedMapProperties &iobj_2,
       binaryOccupancyMap &iobj_3, likelihoodFieldSensorModel &iobj_4);
+  void setupAndReset();
   void matlabCodegenDestructor();
   void release();
   void releaseWrapper();
@@ -67,7 +67,6 @@ private:
 public:
   bool matlabCodegenIsDeleted;
   int isInitialized;
-  bool isSetupComplete;
   double Seed;
   nav::algs::internal::MonteCarloLocalizationBuiltins MCLObj;
   odometryMotionModel *PrivateMotionModel;
@@ -82,6 +81,7 @@ public:
   likelihoodFieldSensorModel _pobj1;
 
 private:
+  bool isSetupComplete;
   cell_wrap_1 inputVarSize[2];
 };
 

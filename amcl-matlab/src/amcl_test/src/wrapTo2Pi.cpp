@@ -15,7 +15,7 @@
 #include <cstring>
 
 // Function Definitions
-void binary_expand_op_2(coder::array<bool, 1U> &in1,
+void binary_expand_op_5(coder::array<bool, 1U> &in1,
                         const coder::array<double, 1U> &in2,
                         const coder::array<double, 1U> &in3)
 {

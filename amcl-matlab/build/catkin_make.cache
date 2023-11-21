@@ -1,0 +1,2 @@
+amcl_test
+-DALIAS_ROS1_CLASS_LOADER=1 -DBoost_NAMESPACE=mwboost -DCMAKE_PREFIX_PATH=C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1;C:/Program Files/MATLAB/R2023b/toolbox/ros/mlroscpp/custom_messages -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCATKIN_DEVEL_PREFIX=C:\MatlabProjects\amcl-matlab\devel -DCMAKE_INSTALL_PREFIX=C:\MatlabProjects\amcl-matlab\install -G Ninja

@@ -24,6 +24,7 @@ namespace internal {
 class CircularBufferIndex {
 public:
   double Head[2];
+  double Size[2];
   double NewRegions[4];
   bool DropEntireMap;
   bool DropTwoRegions[2];

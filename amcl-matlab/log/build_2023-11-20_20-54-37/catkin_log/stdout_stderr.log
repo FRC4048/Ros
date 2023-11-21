@@ -1,0 +1,254 @@
+**********************************************************************
+** Visual Studio 2019 Developer Command Prompt v16.11.31
+** Copyright (c) 2021 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x86_x64'
+-- The C compiler identification is MSVC 19.29.30152.0
+-- The CXX compiler identification is MSVC 19.29.30152.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Using CATKIN_DEVEL_PREFIX: C:/MatlabProjects/amcl-matlab/devel
+-- Using CMAKE_PREFIX_PATH: C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1;C:/Program Files/MATLAB/R2023b/toolbox/ros/mlroscpp/custom_messages
+-- This workspace overlays: C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1;C:/Program Files/MATLAB/R2023b/toolbox/ros/mlroscpp/custom_messages
+-- Found PythonInterp: C:/Users/the1w/AppData/Local/Microsoft/WindowsApps/python3.exe (found suitable version "3.9.13", minimum required is "3") 
+-- Using PYTHON_EXECUTABLE: C:/Users/the1w/AppData/Local/Microsoft/WindowsApps/python3.exe
+-- Using default Python package layout
+-- Found PY_em: C:\Users\the1w\AppData\Roaming\MATHWO~1\MATLAB\R2023b\ros1\win64\venv\lib\site-packages\em.py  
+-- Using empy: C:/Users/the1w/AppData/Roaming/MATHWO~1/MATLAB/R2023b/ros1/win64/venv/lib/site-packages/em.py
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: C:/MatlabProjects/amcl-matlab/build/test_results
+-- gtest not found, C++ tests can not be built. Please install the gtest headers globally in your system or checkout gtest (by running 'git clone  https://github.com/google/googletest.git -b release-1.8.0' in the source space 'C:/MatlabProjects/amcl-matlab/src' of your workspace) to enable gtests
+-- nosetests not found, Python tests can not be run (try installing package 'python3-nose')
+-- catkin 0.8.10
+-- BUILD_SHARED_LIBS is on
+The system cannot find the batch label specified - GenerateTempFilename
+-- BUILD_SHARED_LIBS is on
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- ~~  traversing 1 packages in topological order:
+-- ~~  - amcl_test
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- +++ processing catkin package: 'amcl_test'
+-- ==> add_subdirectory(amcl_test)
+CMake Warning at C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1/share/genmsg/cmake/genmsg-extras.cmake:49 (message):
+  Unknown message generator specified in ROS_LANG_DISABLE: geneus
+Call Stack (most recent call first):
+  C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1/share/genmsg/cmake/genmsgConfig.cmake:222 (include)
+  C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1/share/actionlib_msgs/cmake/actionlib_msgs-extras.cmake:2 (find_package)
+  C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1/share/actionlib_msgs/cmake/actionlib_msgsConfig.cmake:222 (include)
+  C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1/share/nav_msgs/cmake/nav_msgsConfig.cmake:197 (find_package)
+  C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1/share/catkin/cmake/catkinConfig.cmake:76 (find_package)
+  amcl_test/CMakeLists.txt:24 (find_package)
+
+
+CMake Warning at C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1/share/genmsg/cmake/genmsg-extras.cmake:49 (message):
+  Unknown message generator specified in ROS_LANG_DISABLE: genlisp
+Call Stack (most recent call first):
+  C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1/share/genmsg/cmake/genmsgConfig.cmake:222 (include)
+  C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1/share/actionlib_msgs/cmake/actionlib_msgs-extras.cmake:2 (find_package)
+  C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1/share/actionlib_msgs/cmake/actionlib_msgsConfig.cmake:222 (include)
+  C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1/share/nav_msgs/cmake/nav_msgsConfig.cmake:197 (find_package)
+  C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1/share/catkin/cmake/catkinConfig.cmake:76 (find_package)
+  amcl_test/CMakeLists.txt:24 (find_package)
+
+
+CMake Warning at C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1/share/genmsg/cmake/genmsg-extras.cmake:49 (message):
+  Unknown message generator specified in ROS_LANG_DISABLE: gennodejs
+Call Stack (most recent call first):
+  C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1/share/genmsg/cmake/genmsgConfig.cmake:222 (include)
+  C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1/share/actionlib_msgs/cmake/actionlib_msgs-extras.cmake:2 (find_package)
+  C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1/share/actionlib_msgs/cmake/actionlib_msgsConfig.cmake:222 (include)
+  C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1/share/nav_msgs/cmake/nav_msgsConfig.cmake:197 (find_package)
+  C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1/share/catkin/cmake/catkinConfig.cmake:76 (find_package)
+  amcl_test/CMakeLists.txt:24 (find_package)
+
+
+-- Using these message generators: gencpp;genpy
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    Boost_NAMESPACE
+
+
+-- Build files have been written to: C:/MatlabProjects/amcl-matlab/build
+[1/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\amcl_test_terminate.cpp.obj
+[2/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\MonteCarloLocalizationBuildable.cpp.obj
+[3/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\amcl_test_initialize.cpp.obj
+[4/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\MonteCarloLocalizationBuiltins.cpp.obj
+[5/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\geometry_msgs_PointStampedStruct.cpp.obj
+[6/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\MapLayer.cpp.obj
+[7/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\geometry_msgs_PoseStruct.cpp.obj
+[8/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\geometry_msgs_PointStruct.cpp.obj
+[9/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\geometry_msgs_TransformStruct.cpp.obj
+[10/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\geometry_msgs_TransformStampedStruct.cpp.obj
+[11/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\CircularBuffer.cpp.obj
+[12/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\geometry_msgs_QuaternionStruct.cpp.obj
+[13/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\ixfun.cpp.obj
+[14/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\geometry_msgs_Vector3Struct.cpp.obj
+[15/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\nullAssignment.cpp.obj
+[16/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\lidarScan.cpp.obj
+[17/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\odometryMotionModel.cpp.obj
+[18/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\mod.cpp.obj
+[19/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\nav_msgs_OccupancyGridStruct.cpp.obj
+[20/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\nav_msgs_MapMetaDataStruct.cpp.obj
+[21/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\binaryOccupancyMap.cpp.obj
+[22/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\ros_TimeStruct.cpp.obj
+[23/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\monteCarloLocalization.cpp.obj
+[24/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\rosReadScanAngles.cpp.obj
+[25/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\rtGetNaN.cpp.obj
+[26/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\sort.cpp.obj
+[27/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\quat2eul.cpp.obj
+[28/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\rtGetInf.cpp.obj
+[29/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\rosReadLidarScan.cpp.obj
+[30/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\rt_nonfinite.cpp.obj
+[31/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\rosReadBinaryOccupancyGrid.cpp.obj
+[32/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\std_msgs_HeaderStruct.cpp.obj
+[33/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\sensor_msgs_LaserScanStruct.cpp.obj
+[34/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\amcl_map_cspace.cpp.obj
+[35/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\wrapTo2Pi.cpp.obj
+[36/62] Building C object amcl_test\CMakeFiles\amcl_test.dir\src\amcl_map.c.obj
+[37/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\wrapToPi.cpp.obj
+[38/62] Building C object amcl_test\CMakeFiles\amcl_test.dir\src\amcl_map_draw.c.obj
+[39/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\mclcodegen_api.cpp.obj
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(138): warning C4297: 'mclSetOccupancyGrid_real64': function assumed not to throw an exception but does
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(138): note: The function is extern "C" and /EHc was specified
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(162): warning C4297: 'mclSetOccupancyGrid_real64': function assumed not to throw an exception but does
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(162): note: The function is extern "C" and /EHc was specified
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(201): warning C4297: 'mclInitializePf_real64': function assumed not to throw an exception but does
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(201): note: The function is extern "C" and /EHc was specified
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(235): warning C4297: 'mclInitializePf_real64': function assumed not to throw an exception but does
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(235): note: The function is extern "C" and /EHc was specified
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(258): warning C4297: 'mclSetInitialPose_real64': function assumed not to throw an exception but does
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(258): note: The function is extern "C" and /EHc was specified
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(295): warning C4297: 'mclGetHypothesis_real64': function assumed not to throw an exception but does
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(295): note: The function is extern "C" and /EHc was specified
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(319): warning C4297: 'mclGetHypothesis_real64': function assumed not to throw an exception but does
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(319): note: The function is extern "C" and /EHc was specified
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(345): warning C4297: 'mclGetHypothesis_real64': function assumed not to throw an exception but does
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(345): note: The function is extern "C" and /EHc was specified
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(356): warning C4297: 'mclSetParticles_real64': function assumed not to throw an exception but does
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(356): note: The function is extern "C" and /EHc was specified
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(375): warning C4297: 'mclGetNumParticles_real64': function assumed not to throw an exception but does
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(375): note: The function is extern "C" and /EHc was specified
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(387): warning C4297: 'mclGetParticles_real64': function assumed not to throw an exception but does
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(387): note: The function is extern "C" and /EHc was specified
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(401): warning C4297: 'mclGetParticles_real64': function assumed not to throw an exception but does
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(401): note: The function is extern "C" and /EHc was specified
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(420): warning C4297: 'mclPredict_real64': function assumed not to throw an exception but does
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(420): note: The function is extern "C" and /EHc was specified
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(479): warning C4297: 'mclCorrect_real64': function assumed not to throw an exception but does
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(479): note: The function is extern "C" and /EHc was specified
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(483): warning C4297: 'mclCorrect_real64': function assumed not to throw an exception but does
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(483): note: The function is extern "C" and /EHc was specified
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(546): warning C4297: 'mclGetOccupancyWorld_real64': function assumed not to throw an exception but does
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(546): note: The function is extern "C" and /EHc was specified
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(595): warning C4297: 'mclGlobalLocalization_real64': function assumed not to throw an exception but does
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(595): note: The function is extern "C" and /EHc was specified
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(599): warning C4297: 'mclGlobalLocalization_real64': function assumed not to throw an exception but does
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mclcodegen_api.cpp(599): note: The function is extern "C" and /EHc was specified
+[40/62] Building C object amcl_test\CMakeFiles\amcl_test.dir\src\amcl_eig3.c.obj
+[41/62] Building C object amcl_test\CMakeFiles\amcl_test.dir\src\amcl_map_range.c.obj
+[42/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\amcl_random_generator.cpp.obj
+[43/62] Building C object amcl_test\CMakeFiles\amcl_test.dir\src\amcl_map_store.c.obj
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\amcl_map_store.c(55): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\amcl_map_store.c(58): warning C4996: 'strerror': This function or variable may be unsafe. Consider using strerror_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\amcl_map_store.c(64): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\amcl_map_store.c(76): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+[44/62] Building C object amcl_test\CMakeFiles\amcl_test.dir\src\amcl_pf_draw.c.obj
+[45/62] Building C object amcl_test\CMakeFiles\amcl_test.dir\src\amcl_pf.c.obj
+[46/62] Building C object amcl_test\CMakeFiles\amcl_test.dir\src\amcl_pf_kdtree.c.obj
+[47/62] Building C object amcl_test\CMakeFiles\amcl_test.dir\src\amcl_pf_pdf.c.obj
+[48/62] Building C object amcl_test\CMakeFiles\amcl_test.dir\src\amcl_pf_vector.c.obj
+[49/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\amcl_sensor.cpp.obj
+[50/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\amcl_odom.cpp.obj
+[51/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\amcl_laser.cpp.obj
+[52/62] Building CXX object CMakeFiles\Project__setup_util.py_exec_install_python.dir\catkin_generated\add_python_executable\Project__setup_util.py_exec_install_python\_setup_util.cpp.obj
+[53/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\Publisher.cpp.obj
+C:\Program Files\MATLAB\R2023b\sys\ros1\win64\ros1\boost\include\boost-1_78\boost/bind.hpp(77): note: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+[54/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\main.cpp.obj
+C:\Program Files\MATLAB\R2023b\sys\ros1\win64\ros1\boost\include\boost-1_78\boost/bind.hpp(77): note: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+[55/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\Subscriber.cpp.obj
+C:\Program Files\MATLAB\R2023b\sys\ros1\win64\ros1\boost\include\boost-1_78\boost/bind.hpp(77): note: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+[56/62] Linking CXX executable catkin_generated\windows_wrappers\Project__setup_util.py_exec_install_python\_setup_util.exe
+[57/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\ros_structmsg_conversion.cpp.obj
+C:\Program Files\MATLAB\R2023b\sys\ros1\win64\ros1\boost\include\boost-1_78\boost/bind.hpp(77): note: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+C:\MatlabProjects\amcl-matlab\src\amcl_test\include\amcl_test\coder_array.h(607): warning C4267: '=': conversion from 'size_t' to 'SZ', possible loss of data
+        with
+        [
+            SZ=coder::SizeType
+        ]
+C:\MatlabProjects\amcl-matlab\src\amcl_test\include\amcl_test\coder_array.h(628): note: see reference to function template instantiation 'void coder::array_base<T,coder::SizeType,1>::set_size_i<0,unsigned __int64>(Last)' being compiled
+        with
+        [
+            T=signed char,
+            Last=unsigned __int64
+        ]
+C:\MatlabProjects\amcl-matlab\src\amcl_test\include\amcl_test\coder_array.h(628): note: see reference to function template instantiation 'void coder::array_base<T,coder::SizeType,1>::set_size_i<0,unsigned __int64>(Last)' being compiled
+        with
+        [
+            T=signed char,
+            Last=unsigned __int64
+        ]
+C:\MatlabProjects\amcl-matlab\src\amcl_test\include\amcl_test\mlroscpp_msgconvert_utils.h(167): note: see reference to function template instantiation 'void coder::array_base<T,coder::SizeType,1>::set_size<unsigned __int64>(unsigned __int64)' being compiled
+        with
+        [
+            T=signed char
+        ]
+C:\MatlabProjects\amcl-matlab\src\amcl_test\include\amcl_test\mlroscpp_msgconvert_utils.h(167): note: see reference to function template instantiation 'void coder::array_base<T,coder::SizeType,1>::set_size<unsigned __int64>(unsigned __int64)' being compiled
+        with
+        [
+            T=signed char
+        ]
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\ros_structmsg_conversion.cpp(187): note: see reference to function template instantiation 'void convertToStructPrimitiveArray<std::vector<T,std::allocator<T>>,signed char>(coder::array<T,1> &,const MsgType &)' being compiled
+        with
+        [
+            T=signed char,
+            MsgType=std::vector<signed char,std::allocator<signed char>>
+        ]
+[58/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\mlroscpp_sub.cpp.obj
+C:\Program Files\MATLAB\R2023b\sys\ros1\win64\ros1\boost\include\boost-1_78\boost/bind.hpp(77): note: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mlroscpp_sub.cpp(12): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\mlroscpp_sub.cpp(19): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+[59/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\amcl_test.cpp.obj
+FAILED: amcl_test/CMakeFiles/amcl_test.dir/src/amcl_test.cpp.obj 
+C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x64\cl.exe  /nologo /TP -DBOOST_ALL_DYN_LINK -DBOOST_ALL_NO_LIB -DNOMINMAX -DNO_STRICT -DQ_NOWINSTRICT -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"amcl_test\" -DWIN32_LEAN_AND_MEAN -D_USE_MATH_DEFINES -Dclass_loader=ros1_class_loader -IC:\MatlabProjects\amcl-matlab\src\amcl_test\include -IC:\MatlabProjects\amcl-matlab\src\amcl_test -I"C:\Program Files\MATLAB\R2023b\sys\ros1\win64\ros1\include" -I"C:\Program Files\MATLAB\R2023b\sys\ros1\win64\ros1\boost\include\boost-1_78" -I"C:\Program Files\MATLAB\R2023b\sys\ros1\win64\ros1\console_bridge\include" -I"C:\Program Files\MATLAB\R2023b\sys\ros1\win64\ros1\share\xmlrpcpp\cmake\..\..\..\include\xmlrpcpp" -I\codegen\exe -IC:\MatlabProjects\amcl-matlab\src\amcl_test\include\amcl_test /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG /Zc:__cplusplus -DLIBRARY_EXPORTS -D_USE_MATH_DEFINES -D__MW_TARGET_USE_HARDWARE_RESOURCES_H__ -DROS_PROJECT -DMW_SCHED_OTHER -DSTACK_SIZE=200000 -DMODEL=amcl_test -std:c++14 /showIncludes /Foamcl_test\CMakeFiles\amcl_test.dir\src\amcl_test.cpp.obj /Fdamcl_test\CMakeFiles\amcl_test.dir\ /FS -c C:\MatlabProjects\amcl-matlab\src\amcl_test\src\amcl_test.cpp
+C:\Program Files\MATLAB\R2023b\sys\ros1\win64\ros1\boost\include\boost-1_78\boost/bind.hpp(77): note: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+C:\MatlabProjects\amcl-matlab\src\amcl_test\include\amcl_test\mlroscpp_transform.h(152): warning C4267: 'return': conversion from 'size_t' to 'uint32_t', possible loss of data
+C:\MatlabProjects\amcl-matlab\src\amcl_test\include\amcl_test\mlroscpp_transform.h(163): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\MatlabProjects\amcl-matlab\src\amcl_test\include\amcl_test\mlroscpp_transform.h(175): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\amcl_test.cpp(348): error C2664: 'void MATLABPublisher<geometry_msgs::PointStamped,geometry_msgs_PointStampedStruct_T>::publish(const StructType *)': cannot convert argument 1 from 'struct_T *' to 'const StructType *'
+        with
+        [
+            StructType=geometry_msgs_PointStampedStruct_T
+        ]
+C:\MatlabProjects\amcl-matlab\src\amcl_test\src\amcl_test.cpp(348): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+C:\MatlabProjects\amcl-matlab\src\amcl_test\include\amcl_test\mlroscpp_pub.h(27): note: see declaration of 'MATLABPublisher<geometry_msgs::PointStamped,geometry_msgs_PointStampedStruct_T>::publish'
+[60/62] Building CXX object amcl_test\CMakeFiles\amcl_test.dir\src\TransformationTree.cpp.obj
+C:\Program Files\MATLAB\R2023b\sys\ros1\win64\ros1\boost\include\boost-1_78\boost/bind.hpp(77): note: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace mwboost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+C:\MatlabProjects\amcl-matlab\src\amcl_test\include\amcl_test\mlroscpp_transform.h(152): warning C4267: 'return': conversion from 'size_t' to 'uint32_t', possible loss of data
+C:\MatlabProjects\amcl-matlab\src\amcl_test\include\amcl_test\mlroscpp_transform.h(163): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\MatlabProjects\amcl-matlab\src\amcl_test\include\amcl_test\mlroscpp_transform.h(175): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+ninja: build stopped: subcommand failed.
+Base path: C:\MatlabProjects\amcl-matlab
+Source space: C:\MatlabProjects\amcl-matlab\src
+Build space: C:\MatlabProjects\amcl-matlab\build
+Devel space: C:\MatlabProjects\amcl-matlab\devel
+Install space: C:\MatlabProjects\amcl-matlab\install
+Copying file from "C:\PROGRA~1\MATLAB\R2023b\sys\ros1\win64\ros1\share\catkin\cmake\toplevel.cmake" to "C:\MatlabProjects\amcl-matlab\src\CMakeLists.txt"
+####
+#### Running command: "cmake C:\MatlabProjects\amcl-matlab\src -DALIAS_ROS1_CLASS_LOADER=1 -DBoost_NAMESPACE=mwboost -DCMAKE_PREFIX_PATH=C:/Program Files/MATLAB/R2023b/sys/ros1/win64/ros1;C:/Program Files/MATLAB/R2023b/toolbox/ros/mlroscpp/custom_messages -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCATKIN_DEVEL_PREFIX=C:\MatlabProjects\amcl-matlab\devel -DCMAKE_INSTALL_PREFIX=C:\MatlabProjects\amcl-matlab\install -G Ninja" in "C:\MatlabProjects\amcl-matlab\build"
+####
+####
+#### Running command: "ninja install -j12 -l12" in "C:\MatlabProjects\amcl-matlab\build"
+####
+Invoking "ninja install -j12 -l12" failed

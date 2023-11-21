@@ -42,10 +42,13 @@ struct geometry_msgs_PoseStruct_T {
   geometry_msgs_QuaternionStruct_T Orientation;
 };
 
-struct geometry_msgs_PoseWithCovarianceStruct_T {
-  char MessageType[32];
-  geometry_msgs_PoseStruct_T Pose;
-  double Covariance[36];
+struct nav_msgs_MapMetaDataStruct_T {
+  char MessageType[20];
+  ros_TimeStruct_T MapLoadTime;
+  float Resolution;
+  unsigned int Width;
+  unsigned int Height;
+  geometry_msgs_PoseStruct_T Origin;
 };
 
 struct geometry_msgs_Vector3Struct_T {
@@ -53,18 +56,6 @@ struct geometry_msgs_Vector3Struct_T {
   double X;
   double Y;
   double Z;
-};
-
-struct geometry_msgs_TwistStruct_T {
-  char MessageType[19];
-  geometry_msgs_Vector3Struct_T Linear;
-  geometry_msgs_Vector3Struct_T Angular;
-};
-
-struct geometry_msgs_TwistWithCovarianceStruct_T {
-  char MessageType[33];
-  geometry_msgs_TwistStruct_T Twist;
-  double Covariance[36];
 };
 
 struct geometry_msgs_TransformStruct_T {
@@ -80,14 +71,6 @@ struct std_msgs_HeaderStruct_T {
   coder::array<char, 2U> FrameId;
 };
 
-struct nav_msgs_OdometryStruct_T {
-  char MessageType[17];
-  std_msgs_HeaderStruct_T Header;
-  coder::array<char, 2U> ChildFrameId;
-  geometry_msgs_PoseWithCovarianceStruct_T Pose;
-  geometry_msgs_TwistWithCovarianceStruct_T Twist;
-};
-
 struct sensor_msgs_LaserScanStruct_T {
   char MessageType[21];
   std_msgs_HeaderStruct_T Header;
@@ -100,6 +83,19 @@ struct sensor_msgs_LaserScanStruct_T {
   float RangeMax;
   coder::array<float, 1U> Ranges;
   coder::array<float, 1U> Intensities;
+};
+
+struct nav_msgs_OccupancyGridStruct_T {
+  char MessageType[22];
+  std_msgs_HeaderStruct_T Header;
+  nav_msgs_MapMetaDataStruct_T Info;
+  coder::array<signed char, 1U> Data;
+};
+
+struct geometry_msgs_PointStampedStruct_T {
+  char MessageType[26];
+  std_msgs_HeaderStruct_T Header;
+  geometry_msgs_PointStruct_T Point;
 };
 
 struct geometry_msgs_TransformStampedStruct_T {

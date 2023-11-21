@@ -22,6 +22,25 @@ void msg2struct(geometry_msgs_PointStruct_T* structPtr, geometry_msgs::Point con
 }
 
 
+// Conversions between geometry_msgs_PointStampedStruct_T and geometry_msgs::PointStamped
+
+void struct2msg(geometry_msgs::PointStamped* msgPtr, geometry_msgs_PointStampedStruct_T const* structPtr)
+{
+  const std::string rosMessageType("geometry_msgs/PointStamped");
+
+  struct2msg(&msgPtr->header, &structPtr->Header);
+  struct2msg(&msgPtr->point, &structPtr->Point);
+}
+
+void msg2struct(geometry_msgs_PointStampedStruct_T* structPtr, geometry_msgs::PointStamped const* msgPtr)
+{
+  const std::string rosMessageType("geometry_msgs/PointStamped");
+
+  msg2struct(&structPtr->Header, &msgPtr->header);
+  msg2struct(&structPtr->Point, &msgPtr->point);
+}
+
+
 // Conversions between geometry_msgs_PoseStruct_T and geometry_msgs::Pose
 
 void struct2msg(geometry_msgs::Pose* msgPtr, geometry_msgs_PoseStruct_T const* structPtr)
@@ -38,25 +57,6 @@ void msg2struct(geometry_msgs_PoseStruct_T* structPtr, geometry_msgs::Pose const
 
   msg2struct(&structPtr->Orientation, &msgPtr->orientation);
   msg2struct(&structPtr->Position, &msgPtr->position);
-}
-
-
-// Conversions between geometry_msgs_PoseWithCovarianceStruct_T and geometry_msgs::PoseWithCovariance
-
-void struct2msg(geometry_msgs::PoseWithCovariance* msgPtr, geometry_msgs_PoseWithCovarianceStruct_T const* structPtr)
-{
-  const std::string rosMessageType("geometry_msgs/PoseWithCovariance");
-
-  convertFromStructPrimitiveArray(msgPtr->covariance, structPtr->Covariance);
-  struct2msg(&msgPtr->pose, &structPtr->Pose);
-}
-
-void msg2struct(geometry_msgs_PoseWithCovarianceStruct_T* structPtr, geometry_msgs::PoseWithCovariance const* msgPtr)
-{
-  const std::string rosMessageType("geometry_msgs/PoseWithCovariance");
-
-  convertToStructPrimitiveArray(structPtr->Covariance, msgPtr->covariance);
-  msg2struct(&structPtr->Pose, &msgPtr->pose);
 }
 
 
@@ -123,44 +123,6 @@ void msg2struct(geometry_msgs_TransformStampedStruct_T* structPtr, geometry_msgs
 }
 
 
-// Conversions between geometry_msgs_TwistStruct_T and geometry_msgs::Twist
-
-void struct2msg(geometry_msgs::Twist* msgPtr, geometry_msgs_TwistStruct_T const* structPtr)
-{
-  const std::string rosMessageType("geometry_msgs/Twist");
-
-  struct2msg(&msgPtr->angular, &structPtr->Angular);
-  struct2msg(&msgPtr->linear, &structPtr->Linear);
-}
-
-void msg2struct(geometry_msgs_TwistStruct_T* structPtr, geometry_msgs::Twist const* msgPtr)
-{
-  const std::string rosMessageType("geometry_msgs/Twist");
-
-  msg2struct(&structPtr->Angular, &msgPtr->angular);
-  msg2struct(&structPtr->Linear, &msgPtr->linear);
-}
-
-
-// Conversions between geometry_msgs_TwistWithCovarianceStruct_T and geometry_msgs::TwistWithCovariance
-
-void struct2msg(geometry_msgs::TwistWithCovariance* msgPtr, geometry_msgs_TwistWithCovarianceStruct_T const* structPtr)
-{
-  const std::string rosMessageType("geometry_msgs/TwistWithCovariance");
-
-  convertFromStructPrimitiveArray(msgPtr->covariance, structPtr->Covariance);
-  struct2msg(&msgPtr->twist, &structPtr->Twist);
-}
-
-void msg2struct(geometry_msgs_TwistWithCovarianceStruct_T* structPtr, geometry_msgs::TwistWithCovariance const* msgPtr)
-{
-  const std::string rosMessageType("geometry_msgs/TwistWithCovariance");
-
-  convertToStructPrimitiveArray(structPtr->Covariance, msgPtr->covariance);
-  msg2struct(&structPtr->Twist, &msgPtr->twist);
-}
-
-
 // Conversions between geometry_msgs_Vector3Struct_T and geometry_msgs::Vector3
 
 void struct2msg(geometry_msgs::Vector3* msgPtr, geometry_msgs_Vector3Struct_T const* structPtr)
@@ -182,26 +144,49 @@ void msg2struct(geometry_msgs_Vector3Struct_T* structPtr, geometry_msgs::Vector3
 }
 
 
-// Conversions between nav_msgs_OdometryStruct_T and nav_msgs::Odometry
+// Conversions between nav_msgs_MapMetaDataStruct_T and nav_msgs::MapMetaData
 
-void struct2msg(nav_msgs::Odometry* msgPtr, nav_msgs_OdometryStruct_T const* structPtr)
+void struct2msg(nav_msgs::MapMetaData* msgPtr, nav_msgs_MapMetaDataStruct_T const* structPtr)
 {
-  const std::string rosMessageType("nav_msgs/Odometry");
+  const std::string rosMessageType("nav_msgs/MapMetaData");
 
-  convertFromStructPrimitiveArray(msgPtr->child_frame_id, structPtr->ChildFrameId);
-  struct2msg(&msgPtr->header, &structPtr->Header);
-  struct2msg(&msgPtr->pose, &structPtr->Pose);
-  struct2msg(&msgPtr->twist, &structPtr->Twist);
+  msgPtr->height =  structPtr->Height;
+  struct2msg(&msgPtr->map_load_time, &structPtr->MapLoadTime);
+  struct2msg(&msgPtr->origin, &structPtr->Origin);
+  msgPtr->resolution =  structPtr->Resolution;
+  msgPtr->width =  structPtr->Width;
 }
 
-void msg2struct(nav_msgs_OdometryStruct_T* structPtr, nav_msgs::Odometry const* msgPtr)
+void msg2struct(nav_msgs_MapMetaDataStruct_T* structPtr, nav_msgs::MapMetaData const* msgPtr)
 {
-  const std::string rosMessageType("nav_msgs/Odometry");
+  const std::string rosMessageType("nav_msgs/MapMetaData");
 
-  convertToStructPrimitiveArray(structPtr->ChildFrameId, msgPtr->child_frame_id);
+  structPtr->Height =  msgPtr->height;
+  msg2struct(&structPtr->MapLoadTime, &msgPtr->map_load_time);
+  msg2struct(&structPtr->Origin, &msgPtr->origin);
+  structPtr->Resolution =  msgPtr->resolution;
+  structPtr->Width =  msgPtr->width;
+}
+
+
+// Conversions between nav_msgs_OccupancyGridStruct_T and nav_msgs::OccupancyGrid
+
+void struct2msg(nav_msgs::OccupancyGrid* msgPtr, nav_msgs_OccupancyGridStruct_T const* structPtr)
+{
+  const std::string rosMessageType("nav_msgs/OccupancyGrid");
+
+  convertFromStructPrimitiveArray(msgPtr->data, structPtr->Data);
+  struct2msg(&msgPtr->header, &structPtr->Header);
+  struct2msg(&msgPtr->info, &structPtr->Info);
+}
+
+void msg2struct(nav_msgs_OccupancyGridStruct_T* structPtr, nav_msgs::OccupancyGrid const* msgPtr)
+{
+  const std::string rosMessageType("nav_msgs/OccupancyGrid");
+
+  convertToStructPrimitiveArray(structPtr->Data, msgPtr->data);
   msg2struct(&structPtr->Header, &msgPtr->header);
-  msg2struct(&structPtr->Pose, &msgPtr->pose);
-  msg2struct(&structPtr->Twist, &msgPtr->twist);
+  msg2struct(&structPtr->Info, &msgPtr->info);
 }
 
 

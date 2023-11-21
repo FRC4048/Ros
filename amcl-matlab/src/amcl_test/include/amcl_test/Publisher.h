@@ -18,7 +18,7 @@
 #include <cstdlib>
 
 // Type Declarations
-struct geometry_msgs_PointStruct_T;
+struct geometry_msgs_PointStampedStruct_T;
 
 // Type Definitions
 namespace coder {
@@ -26,12 +26,26 @@ namespace ros {
 class Publisher {
 public:
   Publisher *init();
-  static geometry_msgs_PointStruct_T rosmessage();
+  static void rosmessage(geometry_msgs_PointStampedStruct_T &msgFromPub);
+  static void rosmessage();
   char TopicName[12];
   double BufferSize;
   bool IsLatching;
-  std::unique_ptr<
-      MATLABPublisher<geometry_msgs::Point, geometry_msgs_PointStruct_T>>
+  std::unique_ptr<MATLABPublisher<geometry_msgs::PointStamped,
+                                  geometry_msgs_PointStampedStruct_T>>
+      PublisherHelper;
+};
+
+class b_Publisher {
+public:
+  b_Publisher *init();
+  char TopicName[8];
+  double BufferSize;
+  bool IsLatching;
+
+private:
+  std::unique_ptr<MATLABPublisher<geometry_msgs::PointStamped,
+                                  geometry_msgs_PointStampedStruct_T>>
       PublisherHelper;
 };
 

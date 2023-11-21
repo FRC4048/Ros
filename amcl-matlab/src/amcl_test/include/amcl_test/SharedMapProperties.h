@@ -23,8 +23,12 @@ namespace autonomous {
 namespace internal {
 class SharedMapProperties {
 public:
+  double Resolution;
+  double GridSize[2];
   double GridOriginInLocal[2];
   double LocalOriginInWorld[2];
+  double Width;
+  double Height;
   double LocalOriginInWorldInternal[2];
 };
 

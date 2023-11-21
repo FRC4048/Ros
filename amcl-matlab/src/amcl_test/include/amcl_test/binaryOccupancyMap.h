@@ -13,6 +13,7 @@
 
 // Include files
 #include "rtwtypes.h"
+#include "coder_array.h"
 #include <cstddef>
 #include <cstdlib>
 
@@ -36,20 +37,20 @@ class CircularBuffer;
 namespace coder {
 class binaryOccupancyMap {
 public:
-  binaryOccupancyMap *
-  init(matlabshared::autonomous::internal::CircularBuffer &iobj_0,
-       matlabshared::autonomous::internal::CircularBufferIndex &iobj_1,
-       matlabshared::autonomous::internal::SharedMapProperties &iobj_2);
+  static binaryOccupancyMap *writeToOG(binaryOccupancyMap &og,
+                                       const array<double, 1U> &values);
   binaryOccupancyMap *
   copy(matlabshared::autonomous::internal::CircularBuffer *iobj_0,
        matlabshared::autonomous::internal::CircularBufferIndex *iobj_1,
        matlabshared::autonomous::internal::SharedMapProperties *iobj_2,
        binaryOccupancyMap *iobj_3);
+  static void counterFPECeil(double val[2]);
   matlabshared::autonomous::internal::SharedMapProperties *SharedProperties;
   matlabshared::autonomous::internal::CircularBufferIndex *Index;
   matlabshared::autonomous::internal::CircularBuffer *Buffer;
   bool DefaultValueInternal;
   bool HasParent;
+  double DataSize[2];
 };
 
 } // namespace coder

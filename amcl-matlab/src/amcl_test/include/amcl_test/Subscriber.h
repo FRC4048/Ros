@@ -27,13 +27,30 @@ public:
   Subscriber *init();
   void callback();
   double get_MessageCount() const;
+  void receive(array<signed char, 1U> &receivedMsg_Data,
+               nav_msgs_MapMetaDataStruct_T &receivedMsg_Info) const;
+  void get_LatestMessage(array<signed char, 1U> &lastSubMsg_Data,
+                         nav_msgs_MapMetaDataStruct_T &lastSubMsg_Info) const;
+  char TopicName[4];
+  double BufferSize;
+  double MessageCount;
+
+private:
+  std::unique_ptr<
+      MATLABSubscriber<nav_msgs::OccupancyGrid, nav_msgs_OccupancyGridStruct_T>>
+      SubscriberHelper;
+  nav_msgs_OccupancyGridStruct_T MsgStruct;
+};
+
+class b_Subscriber {
+public:
+  b_Subscriber *init();
+  void callback();
+  double get_MessageCount() const;
   float receive(array<float, 1U> &receivedMsg_Ranges, char statusText[7],
-                float &receivedMsg_AngleIncrement, float &receivedMsg_RangeMin,
-                float &receivedMsg_RangeMax, bool &status) const;
+                float &receivedMsg_AngleIncrement, bool &status) const;
   float get_LatestMessage(array<float, 1U> &lastSubMsg_Ranges,
-                          float &lastSubMsg_AngleIncrement,
-                          float &lastSubMsg_RangeMin,
-                          float &lastSubMsg_RangeMax) const;
+                          float &lastSubMsg_AngleIncrement) const;
   char TopicName[5];
   double BufferSize;
   double MessageCount;
@@ -45,25 +62,21 @@ private:
   sensor_msgs_LaserScanStruct_T MsgStruct;
 };
 
-class b_Subscriber {
+class c_Subscriber {
 public:
-  b_Subscriber *init();
+  c_Subscriber *init();
   void callback();
   double get_MessageCount() const;
-  double get_LatestMessage(double &lastSubMsg_Pose_Pose_Position_Y,
-                           double &lastSubMsg_Pose_Pose_Orientation_X,
-                           double &lastSubMsg_Pose_Pose_Orientation_Y,
-                           double &lastSubMsg_Pose_Pose_Orientation_Z,
-                           double &lastSubMsg_Pose_Pose_Orientation_W) const;
-  char TopicName[5];
+  double get_LatestMessage(double &lastSubMsg_Y, double &lastSubMsg_Z) const;
+  char TopicName[4];
   double BufferSize;
   double MessageCount;
 
 private:
   std::unique_ptr<
-      MATLABSubscriber<nav_msgs::Odometry, nav_msgs_OdometryStruct_T>>
+      MATLABSubscriber<geometry_msgs::Point, geometry_msgs_PointStruct_T>>
       SubscriberHelper;
-  nav_msgs_OdometryStruct_T MsgStruct;
+  geometry_msgs_PointStruct_T MsgStruct;
 };
 
 } // namespace ros

@@ -11,7 +11,8 @@
 // Include files
 #include "Subscriber.h"
 #include "amcl_test_types.h"
-#include "nav_msgs_OdometryStruct.h"
+#include "geometry_msgs_PointStruct.h"
+#include "nav_msgs_OccupancyGridStruct.h"
 #include "rt_nonfinite.h"
 #include "sensor_msgs_LaserScanStruct.h"
 #include "coder_array.h"
@@ -33,10 +34,28 @@ void b_Subscriber::callback()
   MessageCount = get_MessageCount() + 1.0;
 }
 
-float Subscriber::get_LatestMessage(array<float, 1U> &lastSubMsg_Ranges,
-                                    float &lastSubMsg_AngleIncrement,
-                                    float &lastSubMsg_RangeMin,
-                                    float &lastSubMsg_RangeMax) const
+void c_Subscriber::callback()
+{
+  MessageCount = get_MessageCount() + 1.0;
+}
+
+void Subscriber::get_LatestMessage(
+    array<signed char, 1U> &lastSubMsg_Data,
+    nav_msgs_MapMetaDataStruct_T &lastSubMsg_Info) const
+{
+  int loop_ub;
+  MATLABSUBSCRIBER_lock(SubscriberHelper);
+  lastSubMsg_Info = MsgStruct.Info;
+  lastSubMsg_Data.set_size(MsgStruct.Data.size(0));
+  loop_ub = MsgStruct.Data.size(0);
+  for (int i{0}; i < loop_ub; i++) {
+    lastSubMsg_Data[i] = MsgStruct.Data[i];
+  }
+  MATLABSUBSCRIBER_unlock(SubscriberHelper);
+}
+
+float b_Subscriber::get_LatestMessage(array<float, 1U> &lastSubMsg_Ranges,
+                                      float &lastSubMsg_AngleIncrement) const
 {
   float lastSubMsg_AngleMin;
   int loop_ub;
@@ -49,14 +68,7 @@ float Subscriber::get_LatestMessage(array<float, 1U> &lastSubMsg_Ranges,
   MATLABSUBSCRIBER_unlock(SubscriberHelper);
   lastSubMsg_AngleMin = MsgStruct.AngleMin;
   lastSubMsg_AngleIncrement = MsgStruct.AngleIncrement;
-  lastSubMsg_RangeMin = MsgStruct.RangeMin;
-  lastSubMsg_RangeMax = MsgStruct.RangeMax;
   return lastSubMsg_AngleMin;
-}
-
-double b_Subscriber::get_MessageCount() const
-{
-  return MessageCount;
 }
 
 double Subscriber::get_MessageCount() const
@@ -64,29 +76,56 @@ double Subscriber::get_MessageCount() const
   return MessageCount;
 }
 
-double b_Subscriber::get_LatestMessage(
-    double &lastSubMsg_Pose_Pose_Position_Y,
-    double &lastSubMsg_Pose_Pose_Orientation_X,
-    double &lastSubMsg_Pose_Pose_Orientation_Y,
-    double &lastSubMsg_Pose_Pose_Orientation_Z,
-    double &lastSubMsg_Pose_Pose_Orientation_W) const
+double c_Subscriber::get_MessageCount() const
 {
-  double lastSubMsg_Pose_Pose_Position_X;
+  return MessageCount;
+}
+
+double b_Subscriber::get_MessageCount() const
+{
+  return MessageCount;
+}
+
+double c_Subscriber::get_LatestMessage(double &lastSubMsg_Y,
+                                       double &lastSubMsg_Z) const
+{
+  double lastSubMsg_X;
   MATLABSUBSCRIBER_lock(SubscriberHelper);
-  lastSubMsg_Pose_Pose_Position_X = MsgStruct.Pose.Pose.Position.X;
-  lastSubMsg_Pose_Pose_Position_Y = MsgStruct.Pose.Pose.Position.Y;
-  lastSubMsg_Pose_Pose_Orientation_X = MsgStruct.Pose.Pose.Orientation.X;
-  lastSubMsg_Pose_Pose_Orientation_Y = MsgStruct.Pose.Pose.Orientation.Y;
-  lastSubMsg_Pose_Pose_Orientation_Z = MsgStruct.Pose.Pose.Orientation.Z;
-  lastSubMsg_Pose_Pose_Orientation_W = MsgStruct.Pose.Pose.Orientation.W;
+  lastSubMsg_X = MsgStruct.X;
+  lastSubMsg_Y = MsgStruct.Y;
+  lastSubMsg_Z = MsgStruct.Z;
   MATLABSUBSCRIBER_unlock(SubscriberHelper);
-  return lastSubMsg_Pose_Pose_Position_X;
+  return lastSubMsg_X;
 }
 
 Subscriber *Subscriber::init()
 {
-  static const char topic[5]{'/', 's', 'c', 'a', 'n'};
   Subscriber *obj;
+  obj = this;
+  obj->TopicName[0] = '/';
+  obj->TopicName[1] = 'm';
+  obj->TopicName[2] = 'a';
+  obj->TopicName[3] = 'p';
+  obj->BufferSize = 1.0;
+  obj->MessageCount = 0.0;
+  nav_msgs_OccupancyGridStruct(obj->MsgStruct);
+  auto structPtr = (&obj->MsgStruct);
+  obj->SubscriberHelper =
+      std::unique_ptr<MATLABSubscriber<nav_msgs::OccupancyGrid,
+                                       nav_msgs_OccupancyGridStruct_T>>(
+          new MATLABSubscriber<nav_msgs::OccupancyGrid,
+                               nav_msgs_OccupancyGridStruct_T>(
+              structPtr, [this] { this->callback(); })); //();
+  MATLABSUBSCRIBER_createSubscriber(obj->SubscriberHelper, &obj->TopicName[0],
+                                    4.0, obj->BufferSize);
+  obj->callback();
+  return obj;
+}
+
+b_Subscriber *b_Subscriber::init()
+{
+  static const char topic[5]{'/', 's', 'c', 'a', 'n'};
+  b_Subscriber *obj;
   obj = this;
   for (int i{0}; i < 5; i++) {
     obj->TopicName[i] = topic[i];
@@ -106,32 +145,45 @@ Subscriber *Subscriber::init()
   return obj;
 }
 
-b_Subscriber *b_Subscriber::init()
+c_Subscriber *c_Subscriber::init()
 {
-  static const char topic[5]{'/', 'o', 'd', 'o', 'm'};
-  b_Subscriber *obj;
+  c_Subscriber *obj;
   obj = this;
-  for (int i{0}; i < 5; i++) {
-    obj->TopicName[i] = topic[i];
-  }
+  obj->TopicName[0] = '/';
+  obj->TopicName[1] = 'i';
+  obj->TopicName[2] = 'm';
+  obj->TopicName[3] = 'u';
   obj->BufferSize = 1.0;
   obj->MessageCount = 0.0;
-  nav_msgs_OdometryStruct(obj->MsgStruct);
+  obj->MsgStruct = geometry_msgs_PointStruct();
   auto structPtr = (&obj->MsgStruct);
   obj->SubscriberHelper = std::unique_ptr<
-      MATLABSubscriber<nav_msgs::Odometry, nav_msgs_OdometryStruct_T>>(
-      new MATLABSubscriber<nav_msgs::Odometry, nav_msgs_OdometryStruct_T>(
+      MATLABSubscriber<geometry_msgs::Point, geometry_msgs_PointStruct_T>>(
+      new MATLABSubscriber<geometry_msgs::Point, geometry_msgs_PointStruct_T>(
           structPtr, [this] { this->callback(); })); //();
   MATLABSUBSCRIBER_createSubscriber(obj->SubscriberHelper, &obj->TopicName[0],
-                                    5.0, obj->BufferSize);
+                                    4.0, obj->BufferSize);
   obj->callback();
   return obj;
 }
 
-float Subscriber::receive(array<float, 1U> &receivedMsg_Ranges,
-                          char statusText[7], float &receivedMsg_AngleIncrement,
-                          float &receivedMsg_RangeMin,
-                          float &receivedMsg_RangeMax, bool &status) const
+void Subscriber::receive(array<signed char, 1U> &receivedMsg_Data,
+                         nav_msgs_MapMetaDataStruct_T &receivedMsg_Info) const
+{
+  double nMessages;
+  nMessages = get_MessageCount();
+  while (get_MessageCount() == nMessages) {
+    ::ros::Time::now();
+  }
+  char statusText[7];
+  getStatusText(true, &statusText[0]);
+  get_LatestMessage(receivedMsg_Data, receivedMsg_Info);
+}
+
+float b_Subscriber::receive(array<float, 1U> &receivedMsg_Ranges,
+                            char statusText[7],
+                            float &receivedMsg_AngleIncrement,
+                            bool &status) const
 {
   ::ros::Duration tDur;
   ::ros::Time tStop;
@@ -151,8 +203,7 @@ float Subscriber::receive(array<float, 1U> &receivedMsg_Ranges,
     }
   }
   getStatusText(status, &statusText[0]);
-  return get_LatestMessage(receivedMsg_Ranges, receivedMsg_AngleIncrement,
-                           receivedMsg_RangeMin, receivedMsg_RangeMax);
+  return get_LatestMessage(receivedMsg_Ranges, receivedMsg_AngleIncrement);
 }
 
 } // namespace ros
